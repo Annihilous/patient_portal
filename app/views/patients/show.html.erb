@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Fname:</strong>
+  <%= @patient.fname %>
+</p>
+
+<p>
+  <strong>Lname:</strong>
+  <%= @patient.lname %>
+</p>
+
+<p>
+  <strong>Age:</strong>
+  <%= @patient.age %>
+</p>
+
+<p>
+	<b>Has an appointment with: </b>
+	<ul>
+		<% @patient.doctors.each do | dr | %>
+			<li>Dr. <%= dr.lname %></li>
+		<%end%>
+	</ul>
+</p>
+
+<%= link_to 'Edit', edit_patient_path(@patient) %> |
+<%= link_to 'Back', patients_path %>
